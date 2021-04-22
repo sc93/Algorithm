@@ -124,3 +124,27 @@
 // function solution(seoul) {
 //     return `김서방은 ${seoul.findIndex(x=>x === "Kim")}에 있다`
 // }
+// function solution(n) {
+//     let arr = new Array(n - 1).fill(0);
+//     for (let i = 2; i <= n; i++) {
+//         arr = arr.filter((n, idx) => idx + 2 === i || (idx + 2) % i !== 0);
+//     }
+//     console.log(arr);
+//     return arr.length;
+// }
+// console.log(solution(5));
+
+function solution(s) {
+    return s
+        .split(' ')
+        .map((c) =>
+            c
+                .split('')
+                .map((a, i) =>
+                    i % 2 === 0 ? a.toUpperCase() : a.toLowerCase(),
+                )
+                .join(''),
+        )
+        .join(' ');
+}
+console.log(solution('try hello world'));
